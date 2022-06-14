@@ -1,6 +1,7 @@
 HELP.md
 
 application.properties
+application-test.properties
 
 target/
 !.mvn/wrapper/maven-wrapper.jar
