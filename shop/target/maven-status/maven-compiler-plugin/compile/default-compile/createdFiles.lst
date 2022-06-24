@@ -1,1 +1,9 @@
+com/shop/entity/QMember.class
+com/shop/entity/QBaseEntity.class
+com/shop/entity/QOrderItem.class
+com/shop/entity/QCartItem.class
+com/shop/entity/QBaseTImeEntity.class
+com/shop/entity/QCart.class
+com/shop/entity/QOrder.class
+com/shop/entity/QItemImg.class
 com/shop/entity/QItem.class

@@ -9,6 +9,8 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 import org.thymeleaf.util.StringUtils;
 
+import javax.persistence.EntityNotFoundException;
+
 @Service
 @RequiredArgsConstructor
 @Transactional
@@ -36,6 +38,24 @@ public class ItemImgService {
 
         itemImg.updateItemImg(oriImgName, imgName, imgUrl);
         itemImgRepository.save(itemImg);
+    }
 
+    public void updateItemImg(Long itemImgId, MultipartFile itemImgFile) throws Exception {
+        if (!itemImgFile.isEmpty()) {
+            ItemImg saveItemImg = itemImgRepository.findById(itemImgId)
+                    .orElseThrow(EntityNotFoundException::new);
+
+            // 기존 이미지 파일 삭제
+            if (!StringUtils.isEmpty(saveItemImg.getImgName())) {
+                fileService.deleteFile(itemImgLocation + "/" + saveItemImg.getImgName());
+            }
+
+            String oriImgName = itemImgFile.getOriginalFilename();
+            String imgName = fileService.uploadFile(itemImgLocation, oriImgName, itemImgFile.getBytes());
+            String imgUrl = "/images/item/" + imgName;
+
+            // savaItemImg 는 현재 영속성 상태로 sava 메소드를 사용하지 않아도 데이터가 변경되는 것만으로 update가 실행이 된다.
+            saveItemImg.updateItemImg(oriImgName, imgName, imgUrl);
+        }
     }
 }
