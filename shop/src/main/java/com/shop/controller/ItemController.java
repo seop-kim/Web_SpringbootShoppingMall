@@ -62,7 +62,7 @@ public class ItemController {
     @GetMapping(value = "/admin/item/{itemId}")
     public String itemDtl(@PathVariable("itemId") Long itemId, Model model) {
         try {
-            ItemFormDTO itemFormDTO = itemService.getItemDti(itemId);
+            ItemFormDTO itemFormDTO = itemService.getItemDtl(itemId);
             model.addAttribute("itemFormDTO", itemFormDTO);
 
         } catch (EntityNotFoundException e) {
@@ -106,5 +106,12 @@ public class ItemController {
         model.addAttribute("itemSearchDTO", itemSearchDTO);
         model.addAttribute("maxPage", 5);
         return "item/itemMng";
+    }
+
+    @GetMapping(value = "/item/{itemId}")
+    public String itemDtl(Model model, @PathVariable("itemId") Long itemId) {
+        ItemFormDTO itemFormDTO = itemService.getItemDtl(itemId);
+        model.addAttribute("item", itemFormDTO);
+        return "item/itemDtl";
     }
 }
