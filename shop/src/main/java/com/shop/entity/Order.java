@@ -49,6 +49,7 @@ public class Order extends BaseEntity {
 
         order.setOrderStatus(OrderStatus.ORDER); // 주문 상태를 ORDER 로 수정한다.
         order.setOrderDate(LocalDateTime.now()); // 주문 시간을 현재로 수정한다.
+        System.out.println("now time : " + LocalDateTime.now());
 
         return order;
     }
@@ -60,5 +61,13 @@ public class Order extends BaseEntity {
         }
 
         return totalPrice;
+    }
+
+    public void cancelOrder() { // 주문 취소 시 주문 상태 값을 취소로 변경
+        this.orderStatus = OrderStatus.CANCEL;
+
+        for (OrderItem orderItem : orderItems) {
+            orderItem.cancel();
+        }
     }
 }
