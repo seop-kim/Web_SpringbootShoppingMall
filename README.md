@@ -40,7 +40,7 @@
 <br>
 
 - __일부 deprecated된 메소드의 경우 수정된 메소드로 작업 진행__
-  - ItemRepositoryCustomImpl 내 fetchResults() 메소드를 feth() 메소드로 변경
+  - ItemRepositoryCustomImpl 내 fetchResults() 메소드를 fetch() 메소드로 변경
     - 변경에 따른 일부 코드 수정
 
 <br>
