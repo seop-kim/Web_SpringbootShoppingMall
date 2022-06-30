@@ -1,3 +1,4 @@
 # SpringbootShoppingMall / Chapter02
 
-![image](https://user-images.githubusercontent.com/77163842/174023094-2d85a914-42cd-42ac-95b8-38b95990835e.png)
+![image](https://user-images.githubusercontent.com/77163842/176627164-86fc91da-491d-4306-8745-c685710975c8.png)
+
