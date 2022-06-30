@@ -16,6 +16,10 @@
 ### 개발환경 (소프트웨어)
 - IDE : IntelliJ
 - SDK : zulu-15
+- Project : Maven
+- Language : Java
+- Java Version : 11
+- SpringBoot : 2.7.0
 
 
 ### 특이사항
