@@ -25,7 +25,7 @@
 <br>
 
 - __application.properties 의 경우 DB 설정 비밀번호로 인해 ignore 설정__
-  - 대신 application-noti.properties 파일 생성 후 비밀번호를 제외한 모든 설정 값 작성  
+  - 대신 Chapter06 부터 application-noti.properties 파일 생성 후 비밀번호를 제외한 모든 설정 값 작성  
 
 <br>
 
