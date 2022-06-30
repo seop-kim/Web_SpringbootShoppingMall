@@ -109,7 +109,6 @@ public class OrderService {
             OrderItem orderItem = OrderItem.createOrderItem(item, orderDTO.getCount());
             orderItemList.add(orderItem);
         }
-
         Order order = Order.createOrder(member, orderItemList);
         orderRepository.save(order);
 
